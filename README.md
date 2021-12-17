@@ -37,14 +37,14 @@ printf("Code: %d\n", HTTP_OK);
 printf("Meaning: %s\n", getHttpStatusCodeMeaning(HTTP_OK));
 
 // HTTP headers helpers
-printf("Header: %d\n", ACCEPT);
-printf("Header by name: %d\n", getHttpHeaderKeyByValue("Accept"));
-printf("Header value: %d\n", getHeaderValueByKey(ACCEPT));
+printf("Header number: %d\n", ACCEPT);
+printf("Header number by name: %d\n", getHttpHeaderKeyByValue("Accept"));
+printf("Header value: %s\n", getHeaderValueByKey(ACCEPT));
 
 // HTTP method helpers
 printf("Method number: %d\n", HTTP_POST);
 printf("Method number by name: %d\n", getHttpMethodByName("POST"));
-printf("Method value: %d\n", getHttpMethodName(HTTP_POST));
+printf("Method value: %s\n", getHttpMethodName(HTTP_POST));
 
 
 // create IP from octets
@@ -83,5 +83,5 @@ printf("\n");
 char buffer2[50];
 MACAddress macAddress3 = macAddressOf(0x84, 0xcc, 0xa8, 0xaf, 0x33, 0xd1);
 macAddressToString(&macAddress3, buffer2);
-printf("%s\n", buffer3);
+printf("%s\n", buffer2);
 ```
