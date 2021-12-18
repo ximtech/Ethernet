@@ -41,7 +41,7 @@ IPAddress ipAddressFromString(const char *address) {
 
 void ipAddressToString(IPAddress *address, char *buffer) {
     if (address != NULL && buffer != NULL) {
-        sprintf(buffer, "%hhd.%hhd.%hhd.%hhd",
+        sprintf(buffer, "%hd.%hd.%hd.%hd",
                 address->octetsIPv4[0],
                 address->octetsIPv4[1],
                 address->octetsIPv4[2],
