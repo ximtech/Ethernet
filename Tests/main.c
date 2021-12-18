@@ -8,11 +8,11 @@
 int main(int argc, char *argv[MUNIT_ARRAY_PARAM(argc + 1)]) {
     MunitTest emptyTests[] = {END_OF_TESTS};
     MunitSuite testSuitArray[] = {
-            ipAddressTestSuite,
-            macAddressTestSuite,
-//            httpHeaderTestSuite,
-//            httpMethodTestSuite,
-//            httpStatusTestSuite
+//            ipAddressTestSuite,
+//            macAddressTestSuite,
+            httpHeaderTestSuite,
+            httpMethodTestSuite,
+            httpStatusTestSuite
     };
 
     MunitSuite baseSuite = {
