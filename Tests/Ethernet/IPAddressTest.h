@@ -68,7 +68,7 @@ static MunitResult ipAddressValidationTest(const MunitParameter params[], void *
 static MunitTest ipAddressTests[] = {
         {.name = "Test OK ipAddressOf() - should create IP from octets", .test = ipAddressOfTest},
         {.name = "Test OK ipAddressFromString() - should create IP from string", .test = ipAddressFromStringTest},
-//        {.name = "Test OK ipAddressToString() - should convert IP to string", .test = ipAddressToStringTest},
+        {.name = "Test OK ipAddressToString() - should convert IP to string", .test = ipAddressToStringTest},
         {.name = "Test OK isIPv4AddressValid() - validate IPv4", .test = ipAddressValidationTest},
 
         END_OF_TESTS
