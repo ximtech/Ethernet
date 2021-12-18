@@ -120,8 +120,8 @@ static MunitResult getHttpHeaderKeyByValueTest(const MunitParameter params[], vo
 
 
 static MunitTest httpHeaderTests[] = {
-//        {.name = "Test OK getHeaderValueByKey() - should return header value by key", .test = getHeaderValueByKeyTest},
-//        {.name = "Test OK getHttpHeaderKeyByValue() - should return header key by value", .test = getHttpHeaderKeyByValueTest},
+        {.name = "Test OK getHeaderValueByKey() - should return header value by key", .test = getHeaderValueByKeyTest},
+        {.name = "Test OK getHttpHeaderKeyByValue() - should return header key by value", .test = getHttpHeaderKeyByValueTest},
 
         END_OF_TESTS
 };

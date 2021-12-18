@@ -30,8 +30,8 @@ static MunitResult getHttpMethodByNameTest(const MunitParameter params[], void *
 
 
 static MunitTest httpMethodTests[] = {
-//        {.name = "Test OK getHttpMethodName() - should return method name by key", .test = getHttpMethodNameTest},
-//        {.name = "Test OK getHttpMethodByName() - should return method key by name", .test = getHttpMethodByNameTest},
+        {.name = "Test OK getHttpMethodName() - should return method name by key", .test = getHttpMethodNameTest},
+        {.name = "Test OK getHttpMethodByName() - should return method key by name", .test = getHttpMethodByNameTest},
 
         END_OF_TESTS
 };
