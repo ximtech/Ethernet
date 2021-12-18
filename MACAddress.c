@@ -39,7 +39,7 @@ MACAddress macAddressFromString(const char *address) {
 
 void macAddressToString(MACAddress *address, char *buffer) {
     if (address != NULL && buffer != NULL) {
-        sprintf(buffer, "%2x:%2x:%2x:%2x:%2x:%2x",
+        sprintf(buffer, "%x:%x:%x:%x:%x:%x",
                 address->octets[0],
                 address->octets[1],
                 address->octets[2],
