@@ -22,7 +22,7 @@ MACAddress macAddressFromString(const char *address) {
         }
 
         uint32_t macBytes[MAC_ADDRESS_OCTETS_COUNT];
-        int conversionResult = sscanf(address, "%x:%x:%x:%x:%x:%x", &macBytes[0], &macBytes[1], &macBytes[2], &macBytes[3], &macBytes[4], &macBytes[5]);
+        int32_t conversionResult = sscanf(address, "%2lX:%2lX:%2lX:%2lX:%2lX:%2lX", &macBytes[0], &macBytes[1], &macBytes[2], &macBytes[3], &macBytes[4], &macBytes[5]);
         if (conversionResult != MAC_ADDRESS_OCTETS_COUNT) {
             return macAddress;
         }
@@ -39,7 +39,7 @@ MACAddress macAddressFromString(const char *address) {
 
 void macAddressToString(MACAddress *address, char *buffer) {
     if (address != NULL && buffer != NULL) {
-        sprintf(buffer, "%x:%x:%x:%x:%x:%x",
+        sprintf(buffer, "%02x:%02x:%02x:%02x:%02x:%02x",
                 address->octets[0],
                 address->octets[1],
                 address->octets[2],

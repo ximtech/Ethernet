@@ -75,7 +75,7 @@ static MunitTest macAddressTests[] = {
         {.name = "Test OK macAddressOf() - should create MAC from octets", .test = macAddressOfTest},
         {.name = "Test OK macAddressFromString() - should create MAC from string", .test = macAddressFromStringTest},
         {.name = "Test OK macAddressToString() - should convert MAC to string", .test = macAddressToStringTest},
-//        {.name = "Test OK isMacAddressValid() - validate MAC address", .test = macAddressValidationTest},
+        {.name = "Test OK isMacAddressValid() - validate MAC address", .test = macAddressValidationTest},
 
         END_OF_TESTS
 };
