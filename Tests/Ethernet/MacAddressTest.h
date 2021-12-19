@@ -46,8 +46,8 @@ static MunitResult macAddressFromStringTest(const MunitParameter params[], void 
 
 static MunitResult macAddressToStringTest(const MunitParameter params[], void *data) {
     MACAddress address = macAddressOf(0x84, 0xcc, 0xa8, 0xff, 0x33, 0xd1);
-    char buffer[50];
-    memset(buffer, 0, 50);
+    char buffer[100];
+    memset(buffer, 0, 100);
     macAddressToString(&address, buffer);
     assert_string_equal(buffer, "84:cc:a8:ff:33:d1");
     return MUNIT_OK;
