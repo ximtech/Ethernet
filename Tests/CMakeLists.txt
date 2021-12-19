@@ -7,6 +7,8 @@ set(CMAKE_C_STANDARD 99)
 set(ROOT_DIR "..")
 include_directories(${ROOT_DIR}/)
 
+add_compile_options(-fno-stack-protector)
+
 get_filename_component(BUILD_DIRECTORY_NAME "${CMAKE_CURRENT_BINARY_DIR}" NAME)
 add_subdirectory(${ROOT_DIR} ${BUILD_DIRECTORY_NAME})
 
