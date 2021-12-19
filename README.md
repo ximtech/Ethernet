@@ -1,5 +1,7 @@
 # Ethernet
 
+[![tests](https://github.com/ximtech/Ethernet/actions/workflows/cmake-ci.yml/badge.svg)](https://github.com/ximtech/Ethernet/actions/workflows/cmake-ci.yml)
+
 Base utils and constants for Internet library development
 
 ### Package contains
