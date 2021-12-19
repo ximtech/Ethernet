@@ -44,6 +44,7 @@ static MunitResult ipAddressFromStringTest(const MunitParameter params[], void *
 static MunitResult ipAddressToStringTest(const MunitParameter params[], void *data) {
     IPAddress address = ipAddressOf(255, 124, 12, 56);
     char buffer[20];
+    memset(buffer, 0, 20);
     ipAddressToString(&address, buffer);
     assert_string_equal(buffer, "255.124.12.56");
     return MUNIT_OK;
