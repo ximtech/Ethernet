@@ -74,6 +74,7 @@ static MunitResult getHttpStatusCodeMeaningTest(const MunitParameter params[], v
     assert_string_equal(getHttpStatusCodeMeaning(HTTP_BANDWIDTH_LIMIT_EXCEEDED), "Bandwidth Limit Exceeded");
     assert_string_equal(getHttpStatusCodeMeaning(HTTP_NOT_EXTENDED), "Not Extended");
     assert_string_equal(getHttpStatusCodeMeaning(HTTP_NETWORK_AUTHENTICATION_REQUIRED), "Network Authentication Required");
+    assert_null(getHttpStatusCodeMeaning(13234));
     return MUNIT_OK;
 }
 

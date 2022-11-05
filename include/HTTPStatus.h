@@ -1,8 +1,5 @@
 #pragma once
 
-#define HTTP_STATUS_LENGTH 3
-#define HTTP_STATUS_CODE_MAX_VALUE (sizeof(HTTP_RESPONSE_STATUS_DEFINITION_ARRAY) / sizeof(char *))
-
 typedef enum HTTPStatus {
     HTTP_NO_STATUS = 0,
     HTTP_CONTINUE = 100,
@@ -150,7 +147,7 @@ static const char *const HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[] = {
         "Network Authentication Required"
 };
 
-static const char *getHttpStatusCodeMeaning(HTTPStatus httpStatus) {
+static const char * const getHttpStatusCodeMeaning(HTTPStatus httpStatus) {
     switch (httpStatus) {
         case HTTP_CONTINUE:
             return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[0];
