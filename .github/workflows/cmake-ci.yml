@@ -35,7 +35,7 @@ jobs:
       uses: codecov/codecov-action@v3
       with:
         gcov: true
-        files: "*IPAddress.c.gcov, *MACAddress.c.gcov", "*HTTPHeader.h.gcov", "*HTTPMethod.h.gcov", "*HTTPStatus.h.gcov", "*IPAddress.h.gcov", "*MACAddress.h.gcov"
+        files: "*IPAddress.c.gcov, *MACAddress.c.gcov, *HTTPHeader.h.gcov, *HTTPMethod.h.gcov, *HTTPStatus.h.gcov, *IPAddress.h.gcov, *MACAddress.h.gcov"
         token: ${{ secrets.CODECOV_TOKEN }}
         fail_ci_if_error: true
         verbose: true
