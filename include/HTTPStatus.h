@@ -78,81 +78,216 @@ typedef enum HTTPStatus {
 
 
 static const char *const HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[] = {
-        [HTTP_CONTINUE] = "Continue",
-        [HTTP_SWITCHING_PROTOCOL] = "Switching protocols",
-        [HTTP_PROCESSING] = "Processing",
-        [HTTP_CHECKPOINT] = "Early Hints",
+        "Continue",
+        "Switching protocols",
+        "Processing",
+        "Early Hints",
 
-        [HTTP_OK] = "OK",
-        [HTTP_CREATED] = "Created",
-        [HTTP_ACCEPTED] = "Accepted",
-        [HTTP_NON_AUTHORITATIVE_INFORMATION] = "Non-Authoritative Information",
-        [HTTP_NO_CONTENT] = "No Content",
-        [HTTP_RESET_CONTENT] = "Reset Content",
-        [HTTP_PARTIAL_CONTENT] = "Partial Content",
-        [HTTP_MULTI_STATUS] = "Multi-Status",
-        [HTTP_ALREADY_REPORTED] = "Already Reported",
-        [HTTP_IM_USED] = "IM Used",
+        "OK",
+        "Created",
+        "Accepted",
+        "Non-Authoritative Information",
+        "No Content",
+        "Reset Content",
+        "Partial Content",
+        "Multi-Status",
+        "Already Reported",
+        "IM Used",
 
-        [HTTP_MULTIPLE_CHOICES] = "Multiple Choices",
-        [HTTP_MOVED_PERMANENTLY] = "Moved Permanently",
-        [HTTP_FOUND] = "Found",
-        [HTTP_SEE_OTHER] = "See Other",
-        [HTTP_NOT_MODIFIED] = "Not Modified",
-        [HTTP_USE_PROXY] = "Use Proxy",
-        [HTTP_SWITCH_PROXY] = "Switch Proxy",
-        [HTTP_TEMPORARY_REDIRECT] = "Temporary Redirect",
-        [HTTP_PERMANENT_REDIRECT] = "Permanent Redirect",
+        "Multiple Choices",
+        "Moved Permanently",
+        "Found",
+        "See Other",
+        "Not Modified",
+        "Use Proxy",
+        "Switch Proxy",
+        "Temporary Redirect",
+        "Permanent Redirect",
 
-        [HTTP_BAD_REQUEST] = "Bad Request",
-        [HTTP_UNAUTHORIZED] = "Unauthorized",
-        [HTTP_PAYMENT_REQUIRED] = "Payment Required",
-        [HTTP_FORBIDDEN] = "Forbidden",
-        [HTTP_NOT_FOUND] = "Not Found",
-        [HTTP_METHOD_NOT_ALLOWED] = "Method Not Allowed",
-        [HTTP_NOT_ACCEPTABLE] = "Not Acceptable",
-        [HTTP_PROXY_AUTHENTICATION_REQUIRED] = "Proxy Authentication Required",
-        [HTTP_REQUEST_TIMEOUT] = "Request Timeout",
-        [HTTP_CONFLICT] = "Conflict",
-        [HTTP_GONE] = "Gone",
-        [HTTP_LENGTH_REQUIRED] = "Length Required",
-        [HTTP_PRECONDITION_FAILED] = "Precondition Failed",
-        [HTTP_PAYLOAD_TOO_LARGE] = "Payload Too Large",
-        [HTTP_URI_TOO_LONG] = "URI Too Long",
-        [HTTP_UNSUPPORTED_MEDIA_TYPE] = "Unsupported Media Type",
-        [HTTP_REQUESTED_RANGE_NOT_SATISFIABLE] = "Range Not Satisfiable",
-        [HTTP_EXPECTATION_FAILED] = "Expectation Failed",
-        [HTTP_I_AM_A_TEAPOT] = "I'm a Teapot",
-        [HTTP_METHOD_FAILURE] = "Method Failure",
-        [HTTP_MISDIRECTED_REQUEST] = "Misdirected Request",
+        "Bad Request",
+        "Unauthorized",
+        "Payment Required",
+        "Forbidden",
+        "Not Found",
+        "Method Not Allowed",
+        "Not Acceptable",
+        "Proxy Authentication Required",
+        "Request Timeout",
+        "Conflict",
+        "Gone",
+        "Length Required",
+        "Precondition Failed",
+        "Payload Too Large",
+        "URI Too Long",
+        "Unsupported Media Type",
+        "Range Not Satisfiable",
+        "Expectation Failed",
+        "I'm a Teapot",
+        "Method Failure",
+        "Misdirected Request",
 
-        [HTTP_UNPROCESSABLE_ENTITY] = "Unprocessable Entity",
-        [HTTP_LOCKED] = "Locked",
-        [HTTP_FAILED_DEPENDENCY] = "Failed Dependency",
-        [HTTP_TOO_EARLY] = "Too Early",
-        [HTTP_UPGRADE_REQUIRED] = "Upgrade Required",
-        [HTTP_PRECONDITION_REQUIRED] = "Precondition Required",
-        [HTTP_TOO_MANY_REQUESTS] = "Too Many Requests",
-        [HTTP_REQUEST_HEADER_FIELDS_TOO_LARGE] = "Request Header Fields Too Large",
-        [HTTP_UNAVAILABLE_FOR_LEGAL_REASONS] = "Unavailable For Legal Reasons",
+        "Unprocessable Entity",
+        "Locked",
+        "Failed Dependency",
+        "Too Early",
+        "Upgrade Required",
+        "Precondition Required",
+        "Too Many Requests",
+        "Request Header Fields Too Large",
+        "Unavailable For Legal Reasons",
 
-        [HTTP_INTERNAL_SERVER_ERROR] = "Internal Server Error",
-        [HTTP_NOT_IMPLEMENTED] = "Not Implemented",
-        [HTTP_BAD_GATEWAY] = "Bad Gateway",
-        [HTTP_SERVICE_UNAVAILABLE] = "Service Unavailable",
-        [HTTP_GATEWAY_TIMEOUT] = "Gateway Timeout",
-        [HTTP_VERSION_NOT_SUPPORTED] = "HTTP Version Not Supported",
-        [HTTP_VARIANT_ALSO_NEGOTIATES] = "Variant Also Negotiates",
-        [HTTP_INSUFFICIENT_STORAGE] = "Insufficient Storage",
-        [HTTP_LOOP_DETECTED] = "Loop Detected",
-        [HTTP_BANDWIDTH_LIMIT_EXCEEDED] = "Bandwidth Limit Exceeded",
-        [HTTP_NOT_EXTENDED] = "Not Extended",
-        [HTTP_NETWORK_AUTHENTICATION_REQUIRED] = "Network Authentication Required"
+        "Internal Server Error",
+        "Not Implemented",
+        "Bad Gateway",
+        "Service Unavailable",
+        "Gateway Timeout",
+        "HTTP Version Not Supported",
+        "Variant Also Negotiates",
+        "Insufficient Storage",
+        "Loop Detected",
+        "Bandwidth Limit Exceeded",
+        "Not Extended",
+        "Network Authentication Required"
 };
 
 static const char *getHttpStatusCodeMeaning(HTTPStatus httpStatus) {
-    if (httpStatus > HTTP_NO_STATUS && httpStatus < HTTP_STATUS_CODE_MAX_VALUE) {
-        return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[httpStatus];
+    switch (httpStatus) {
+        case HTTP_CONTINUE:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[0];
+        case HTTP_SWITCHING_PROTOCOL:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[1];
+        case HTTP_PROCESSING:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[2];
+        case HTTP_CHECKPOINT:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[3];
+
+        case HTTP_OK:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[4];
+        case HTTP_CREATED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[5];
+        case HTTP_ACCEPTED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[6];
+        case HTTP_NON_AUTHORITATIVE_INFORMATION:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[7];
+        case HTTP_NO_CONTENT:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[8];
+        case HTTP_RESET_CONTENT:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[9];
+        case HTTP_PARTIAL_CONTENT:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[10];
+        case HTTP_MULTI_STATUS:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[11];
+        case HTTP_ALREADY_REPORTED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[12];
+        case HTTP_IM_USED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[13];
+
+        case HTTP_MULTIPLE_CHOICES:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[14];
+        case HTTP_MOVED_PERMANENTLY:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[15];
+        case HTTP_FOUND:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[16];
+        case HTTP_SEE_OTHER:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[17];
+        case HTTP_NOT_MODIFIED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[18];
+        case HTTP_USE_PROXY:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[19];
+        case HTTP_SWITCH_PROXY:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[20];
+        case HTTP_TEMPORARY_REDIRECT:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[21];
+        case HTTP_PERMANENT_REDIRECT:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[22];
+
+        case HTTP_BAD_REQUEST:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[23];
+        case HTTP_UNAUTHORIZED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[24];
+        case HTTP_PAYMENT_REQUIRED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[25];
+        case HTTP_FORBIDDEN:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[26];
+        case HTTP_NOT_FOUND:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[27];
+        case HTTP_METHOD_NOT_ALLOWED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[28];
+        case HTTP_NOT_ACCEPTABLE:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[29];
+        case HTTP_PROXY_AUTHENTICATION_REQUIRED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[30];
+        case HTTP_REQUEST_TIMEOUT:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[31];
+        case HTTP_CONFLICT:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[32];
+        case HTTP_GONE:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[33];
+        case HTTP_LENGTH_REQUIRED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[34];
+        case HTTP_PRECONDITION_FAILED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[35];
+        case HTTP_PAYLOAD_TOO_LARGE:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[36];
+        case HTTP_URI_TOO_LONG:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[37];
+        case HTTP_UNSUPPORTED_MEDIA_TYPE:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[38];
+        case HTTP_REQUESTED_RANGE_NOT_SATISFIABLE:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[39];
+        case HTTP_EXPECTATION_FAILED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[40];
+        case HTTP_I_AM_A_TEAPOT:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[41];
+        case HTTP_METHOD_FAILURE:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[42];
+        case HTTP_MISDIRECTED_REQUEST:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[43];
+
+        case HTTP_UNPROCESSABLE_ENTITY:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[44];
+        case HTTP_LOCKED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[45];
+        case HTTP_FAILED_DEPENDENCY:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[46];
+        case HTTP_TOO_EARLY:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[47];
+        case HTTP_UPGRADE_REQUIRED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[48];
+        case HTTP_PRECONDITION_REQUIRED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[49];
+        case HTTP_TOO_MANY_REQUESTS:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[50];
+        case HTTP_REQUEST_HEADER_FIELDS_TOO_LARGE:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[51];
+        case HTTP_UNAVAILABLE_FOR_LEGAL_REASONS:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[52];
+
+        case HTTP_INTERNAL_SERVER_ERROR:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[53];
+        case HTTP_NOT_IMPLEMENTED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[54];
+        case HTTP_BAD_GATEWAY:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[55];
+        case HTTP_SERVICE_UNAVAILABLE:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[56];
+        case HTTP_GATEWAY_TIMEOUT:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[57];
+        case HTTP_VERSION_NOT_SUPPORTED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[58];
+        case HTTP_VARIANT_ALSO_NEGOTIATES:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[59];
+        case HTTP_INSUFFICIENT_STORAGE:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[60];
+        case HTTP_LOOP_DETECTED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[61];
+        case HTTP_BANDWIDTH_LIMIT_EXCEEDED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[62];
+        case HTTP_NOT_EXTENDED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[63];
+        case HTTP_NETWORK_AUTHENTICATION_REQUIRED:
+            return HTTP_RESPONSE_STATUS_DEFINITION_ARRAY[64];
+        default:
+            return NULL;
     }
-    return NULL;
 }
