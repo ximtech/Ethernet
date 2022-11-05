@@ -1,6 +1,9 @@
 # Ethernet
 
 [![tests](https://github.com/ximtech/Ethernet/actions/workflows/cmake-ci.yml/badge.svg)](https://github.com/ximtech/Ethernet/actions/workflows/cmake-ci.yml)
+[![codecov](https://codecov.io/gh/ximtech/Ethernet/branch/main/graph/badge.svg?token=BAWKUTZB7U)](https://codecov.io/gh/ximtech/Ethernet)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2ec36a871b0d47ee821d1e7e9384f000)](https://www.codacy.com/gh/ximtech/Ethernet/dashboard)
+
 
 Base utils and constants for Internet library development
 
