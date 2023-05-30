@@ -3,13 +3,6 @@ project(Ethernet VERSION 1.0 LANGUAGES C)
 
 set(CMAKE_C_STANDARD 99)
 
-include(cmake/CPM.cmake)
-
-CPMAddPackage(
-        NAME StringUtils
-        GITHUB_REPOSITORY ximtech/StringUtils
-        GIT_TAG origin/main)
-
 set(SOURCE_FILES
         IPAddress.c
         MACAddress.c
@@ -25,8 +18,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "")
 target_include_directories(${PROJECT_NAME} PUBLIC
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
-
-target_link_libraries(${PROJECT_NAME} StringUtils)
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}.h
         DESTINATION ${CMAKE_INSTALL_PREFIX}/include/${PROJECT_NAME})

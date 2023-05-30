@@ -1,7 +1,9 @@
 #pragma once
 
 #include <stdio.h>
-#include "StringUtils.h"
+#include <string.h>
+#include <inttypes.h>
+#include <stdbool.h>
 
 #define MAC_ADDRESS_OCTETS_COUNT 6
 #define MAC_ADDRESS_LENGTH 17

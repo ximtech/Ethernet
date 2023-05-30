@@ -14,8 +14,8 @@ IPAddress ipAddressOf(uint8_t firstOctet, uint8_t secondOctet, uint8_t thirdOcte
 
 IPAddress ipAddressFromString(const char *address) {
     IPAddress ipAddress = {0};
-    if (isStringNotBlank(address)) {
-        uint32_t ipAddressLength = strlen(address);
+    uint32_t ipAddressLength = address != NULL ? strlen(address) : 0;
+    if (ipAddressLength != 0) {
         if (ipAddressLength < IP_ADDRESS_MIN_LENGTH || ipAddressLength > IP_ADDRESS_LENGTH) {
             return ipAddress;
         }

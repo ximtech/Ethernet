@@ -1,7 +1,9 @@
 #pragma once
 
 #include <stdio.h>
-#include "StringUtils.h"
+#include <string.h>
+#include <inttypes.h>
+#include <stdbool.h>
 
 #define IP_ADDRESS_OCTETS_COUNT 4
 #define IP_ADDRESS_LENGTH 15

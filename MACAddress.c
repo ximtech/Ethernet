@@ -15,8 +15,8 @@ MACAddress macAddressOf(uint8_t firstOctet, uint8_t secondOctet, uint8_t thirdOc
 
 MACAddress macAddressFromString(const char *address) {
     MACAddress macAddress = {0};
-    if (isStringNotBlank(address)) {
-        uint32_t macAddressLength = strlen(address);
+    uint32_t macAddressLength = address != NULL ? strlen(address) : 0;
+    if (macAddressLength != 0) {
         if (macAddressLength != MAC_ADDRESS_LENGTH) {
             return macAddress;
         }
