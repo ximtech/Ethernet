@@ -39,6 +39,23 @@ IPAddress ipAddressFromString(const char *address) {
     return ipAddress;
 }
 
+uint32_t ipAddressToU32(IPAddress *ip) {
+    uint32_t a = ip->octetsIPv4[0];
+    uint32_t b = (uint32_t) ip->octetsIPv4[1] << 8;
+    uint32_t c = (uint32_t) ip->octetsIPv4[2] << 16;
+    uint32_t d = (uint32_t) ip->octetsIPv4[3] << 24;
+    return a + b + c + d;
+}
+
+IPAddress ipAddressFromU32(uint32_t ip) {
+    IPAddress resultIp = {0};
+    resultIp.octetsIPv4[0] = (ip & 0xFF);
+    resultIp.octetsIPv4[1] = (ip >> 8) & 0xFF;
+    resultIp.octetsIPv4[2] = (ip >> 16) & 0xFF;
+    resultIp.octetsIPv4[3] = (ip >> 24) & 0xFF;
+    return resultIp;
+}
+
 void ipAddressToString(IPAddress *address, char *buffer) {
     if (address != NULL && buffer != NULL) {
         sprintf(buffer, "%hd.%hd.%hd.%hd",

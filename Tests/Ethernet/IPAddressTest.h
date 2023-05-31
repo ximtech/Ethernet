@@ -66,11 +66,23 @@ static MunitResult ipAddressValidationTest(const MunitParameter params[], void *
     return MUNIT_OK;
 }
 
+static MunitResult ipAddressToU32AndViceVersaTest(const MunitParameter params[], void *data) {
+    IPAddress ip = ipAddressFromString("192.168.172.111");
+    uint32_t ipU32 = ipAddressToU32(&ip);
+    IPAddress ip2 = ipAddressFromU32(ipU32);
+    assert_uint8(ip2.octetsIPv4[0], ==, 192);
+    assert_uint8(ip2.octetsIPv4[1], ==, 168);
+    assert_uint8(ip2.octetsIPv4[2], ==, 172);
+    assert_uint8(ip2.octetsIPv4[3], ==, 111);
+    return MUNIT_OK;
+}
+
 static MunitTest ipAddressTests[] = {
         {.name = "Test OK ipAddressOf() - should create IP from octets", .test = ipAddressOfTest},
         {.name = "Test OK ipAddressFromString() - should create IP from string", .test = ipAddressFromStringTest},
         {.name = "Test OK ipAddressToString() - should convert IP to string", .test = ipAddressToStringTest},
         {.name = "Test OK isIPv4AddressValid() - validate IPv4", .test = ipAddressValidationTest},
+        {.name = "Test OK ipAddressTo/FromU32() - should correctly convert to number and vice versa", .test = ipAddressToU32AndViceVersaTest},
 
         END_OF_TESTS
 };

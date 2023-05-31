@@ -14,5 +14,9 @@ typedef struct IPAddress {
 
 IPAddress ipAddressOf(uint8_t firstOctet, uint8_t secondOctet, uint8_t thirdOctet, uint8_t fourthOctet);
 IPAddress ipAddressFromString(const char *address);
+
+uint32_t ipAddressToU32(IPAddress *ip);
+IPAddress ipAddressFromU32(uint32_t ip);
+
 void ipAddressToString(IPAddress *address, char *buffer);
 bool isIPv4AddressValid(const char *address);
